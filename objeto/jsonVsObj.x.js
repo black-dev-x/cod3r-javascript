@@ -19,3 +19,11 @@ const textoRetornadoDoCep01001000 = `{
   console.log(textoRetornadoDoCep01001000.cep) 
   //cep no caso é undefined, pois o texto não tem esse atributo
   //pode inclusive ter uma exceção dependendo do que você tentar acessar
+
+  let texto = "{}"
+  let objeto = JSON.parse(texto)
+  objeto.idade = 0
+  objeto.gritar = () => console.log("Eu sou um objeto de idade " + this.idade)
+  objeto = JSON.stringify(objeto)
+  console.log(objeto.idade)
+  objeto.gritar()
