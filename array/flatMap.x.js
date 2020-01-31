@@ -22,10 +22,8 @@ const escola = [
         }
     ]
 }]
-
-const notas = escola.reduce((alunos, turma) => {
-    return alunos.concat(turma.alunos)
-}, []).map(aluno => aluno.nota)
-
-console.log(notas)
+//Podemos primeiro juntar todos os alunos em um único array
+const resultado1 = escola.reduce( (acumulador, turma) => acumulador.concat(turma.alunos) , [])
+const resultado2 = resultado1.map(aluno => aluno.nota)
+console.log(resultado2)
 

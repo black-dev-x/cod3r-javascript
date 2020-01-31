@@ -23,4 +23,11 @@ const escola = [{
     ]
 }]
 
-const getNotaDoAluno = a => a.nota
+const getNotaDoAluno = aluno => aluno.nota
+const getNotasDaTurma = turma => turma.alunos.map(getNotaDoAluno)
+
+const notas1 = escola.map(getNotasDaTurma)
+
+Array.prototype.flatMap = function(callback) {
+    return Array.prototype.apply([], this.map(callback))
+}
