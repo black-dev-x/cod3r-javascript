@@ -1,3 +1,5 @@
 const cep = require('cep-promise')
-
+const postal = require('postal-codes-js')
+const resultado = postal.validate('USA', '91746-2302')
+console.log(resultado)
 cep(59064900).then(valor => console.log(valor))
