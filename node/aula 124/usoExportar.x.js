@@ -1,0 +1,1 @@
+const Galinheiro = require('./Galinheiro')
