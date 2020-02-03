@@ -3,5 +3,12 @@ const axios = require('axios')
 
 axios.get(url).then(resposta => {
     const funcionarios = resposta.data
-    console.log(funcionarios)
+    const menorSalario = funcionarios
+                .filter(funcionario => funcionario.pais == 'China')
+                .filter(funcionario => funcionario.genero == 'F')
+                .map(funcionario => funcionario.salario)
+                .reduce( (acumulador, salario) => {
+                    return acumulador < salario ? acumulador : salario
+                })
+    console.log(menorSalario)
 })
