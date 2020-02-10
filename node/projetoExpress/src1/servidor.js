@@ -1,7 +1,7 @@
 const bancoDeDados = require('./bancoDeDados')
 
 const porta = 3003
-const express = require('express')
+const express = require('express') 
 const app = express()
 
 const getProdutos = (request, response) => {

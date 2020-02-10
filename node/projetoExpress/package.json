@@ -2,13 +2,14 @@
   "name": "projetoexpress",
   "version": "1.0.0",
   "description": "",
-  "main": "src/exercicio.js",
+  "main": "src2/servidor.js",
   "scripts": {
     "start": "nodemon"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "1.18.2",
     "express": "4.16.2"
   }
 }
