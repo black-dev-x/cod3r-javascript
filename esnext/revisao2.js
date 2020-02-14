@@ -5,3 +5,18 @@ const lexico1 = () => console.log(this === exports)
 const lexico2 = lexico1.bind({})
 lexico1()
 lexico2()
+
+function log(texto = 'Node'){
+    console.log(texto)
+}
+
+log()
+log('Sou mais forte')
+
+// operador rest
+function total(...numeros) {
+    let total = 0
+    numeros.forEach(numero => total + numero)
+    return total;
+}
+console.log(total(2,3,4,5))
