@@ -7,6 +7,7 @@ const getProdutos = (req, res) => {
     const produtos = bancoDeDados.pegarTodosProdutos()
     res.send(produtos)
 }
+
 const getProdutoPeloId = (req, res) => {
     const id = req.params.id;
     const produto = bancoDeDados.pegarProdutoComOId(id)
@@ -26,7 +27,7 @@ app.get('/produtos', getProdutos)
 app.get('/produtos/:id', getProdutoPeloId)
 app.delete('/produtos/:id', deletarProdutoPeloId)
 app.post('/produtos', salvarProduto)
-app.listen(3003)
+app.listen(3003, () => console.log('rodando'))
 
 
 
