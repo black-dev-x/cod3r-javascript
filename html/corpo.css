@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.cabecalho {
+  height: 10vh;
+}
+.conteudo {
+  height: 80vh;
+}
+.rodape {
+  height: 10vh;
+}
