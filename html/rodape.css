@@ -2,8 +2,13 @@
   font-family: monospace;
   color: white;
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   padding-left: 20px;
   align-items: center;
   background: #2f2fa2;
+}
+.rodape img {
+  height: 80%;
+  border-radius: 100%;
+  margin-right: 20px;
 }
