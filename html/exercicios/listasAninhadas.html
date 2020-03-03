@@ -1,0 +1,58 @@
+<body>
+  <h1>Projeto</h1>
+  <ul class="tree">
+    <li>
+      backend
+      <ul>
+        <li efeito-de-pasta>
+          app
+          <ul>
+            <li>produto.js</li>
+            <li>usuario.js</li>
+            <li>venda.js</li>
+          </ul>
+        </li>
+        <li>
+          config
+          <ul>
+            <li>banco.js</li>
+            <li>rotas.js</li>
+            <li>servidor.js</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      frontend
+      <ul>
+        <li>
+          public
+          <ul>
+            <li>app.css</li>
+            <li>app.js</li>
+            <li>index.html</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</body>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css" />
+<script>
+  const funcaoQueEscondeOsFilhosDo = elemento => {
+    elemento.onclick = () => {
+      const filhos = elemento.children
+      //sabia que os filhos não possuem o forEach que os arrays possuem?
+      //exato... um dos problemas do javascript...
+      for (let i = 0; i < filhos.length; i++) {
+        const filho = filhos[i] //só funciona com o for normal aqui
+        const estiloAtual = filho.style.display
+        if (estiloAtual === 'none') filho.style.display = 'initial'
+        else filho.style.display = 'none'
+      }
+    }
+  }
+
+  const elementos = document.querySelectorAll('[efeito-de-pasta]')
+  elementos.forEach(elemento => funcaoQueEscondeOsFilhosDo(elemento))
+</script>
