@@ -15,10 +15,20 @@
     </ul>
     <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css" />
     <script>
+      const alternaOEstiloDoFilho = filho => {
+        const estiloAtual = filho.style.display
+        if (estiloAtual == 'none') {
+          filho.style.display = 'block'
+        } else {
+          filho.style.display = 'none'
+        }
+      }
       const elementosColapsaveis = document.querySelectorAll('[collapsible]')
       elementosColapsaveis.forEach(elemento => {
         elemento.onclick = evento => {
-          console.log('cliquei no elemento')
+          const filhos = elemento.children
+          const arrayDeFilhos = Array.from(filhos)
+          arrayDeFilhos.forEach(filho => alternaOEstiloDoFilho(filho))
         }
       })
     </script>
