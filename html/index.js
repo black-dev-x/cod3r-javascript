@@ -8,7 +8,7 @@ const clicarNoLink = evento => {
     //vai ser dessa forma, mas já existem formas mais fáceis (como sempre)
 }
 
-const listaDeLinks = document.querySelectorAll('a')
+const listaDeLinks = document.querySelectorAll('.cabecalho .navegacao a')
 listaDeLinks.forEach(link => {
     link.onclick = clicarNoLink
 })
