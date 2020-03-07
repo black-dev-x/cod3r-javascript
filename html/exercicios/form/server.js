@@ -5,15 +5,17 @@ const bodyParser = require('body-parser')
 //configurações do servidor
 app.use(bodyParser.urlencoded({ extended: true }))
 
-const frases = []
 //metodos do servidor
-const criarNovaFrase = (req, res) => {
-  const novaFrase = req.body.frase
-  frases.push(novaFrase)
-  resposta = ''
-  frases.forEach(frase => resposta += frase + '<br>')
+const cadastrarGalinha = (req, res) => {
+  const formulario = req.body
+  const resposta = `
+<p>A galinha de nome ${formulario.nomeDaGalinha}</p>
+<p>Disse um palavrão, que absurdo, que era "${formulario.palavraoDaGalinha}"</p>
+<p>E ela vem da ${formulario.estado}, obviamente, mesmo que ela não queira</p>
+<p>Gostou ysarot?</p>
+  `
   res.send(resposta)
 }
 
-app.post('/frases', criarNovaFrase)
+app.post('/galinhas', cadastrarGalinha)
 app.listen(3003)

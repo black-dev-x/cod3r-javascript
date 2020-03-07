@@ -1,6 +1,40 @@
 <h1>Formulário</h1>
 
-<form action="http://localhost:3003/frases" method="POST">
-  <input type="text" name="frase" />
-  <button>Enviar Frase</button>
+<form action="http://localhost:3003/galinhas" method="POST" class="formularioCocote">
+  <input type="text" name="nomeDaGalinha" class="campo" />
+  <input type="password" name="palavraoDaGalinha" class="campo" />
+  <textarea name="descricaoDaGalinha" cols="30" rows="10" class="campo"></textarea>
+  <div class="tipos">
+    <p>A galinha é de que tipo?</p>
+
+    <input type="radio" name="tipo" id="esquizoId" value="esquizo" />
+    <label for="esquizoId">Esquizofrênica</label>
+
+    <input type="radio" name="tipo" id="normalId" value="normal" />
+    <label for="normalId">Normal</label>
+
+    <input type="radio" name="tipo" id="ysaId" value="ysa" />
+    <label for="ysaId">Ysa</label>
+  </div>
+  <div class="habilidades">
+    <p>Quais são as habilidades da Galinha?</p>
+    <input type="checkbox" name="habilidade" value="ciscar" />Ciscar
+    <input type="checkbox" name="habilidade" value="voar" />Voar
+    <input type="checkbox" name="habilidade" value="javascript" />Javascript
+    <input type="checkbox" name="habilidade" value="html" />HTML
+  </div>
+  <p>Informe o Estado de origem da Galinha</p>
+  <select name="estado" class="campo">
+    <option value="bahia">Bahia</option>
+    <option value="bahia">Bahia</option>
+    <option value="bahia">Bahia</option>
+    <option value="bahia">Bahia</option>
+    <option value="bahia">Bahia</option>
+    <option value="bahia">Bahia</option>
+    <option value="bahia">Bahia</option>
+    <option value="bahia">Bahia</option>
+    <option value="bahia">Bahia</option>
+    <option value="bahia">Não sou da Bahia Caralho</option>
+  </select>
+  <button>Cadastrar Galinha</button>
 </form>

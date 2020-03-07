@@ -1,0 +1,16 @@
+.campo {
+  display: block;
+  margin-bottom: 10px;
+}
+.tipos input {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.habilidades input {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.habilidades,
+.tipos {
+  margin-bottom: 20px;
+}
