@@ -35,14 +35,20 @@
   </style>
   <script>
     const imagens = document.querySelectorAll('img')
-    const imagemSize = 300
-    const tamanhoMaximo = imagemSize * imagens.length
+    const imagemSize = 300 //minhas imagens todas tem 300px de tamanho
+    const tamanhoMaximo = imagemSize * imagens.length //se tiver 10 imagens, o tamanho total seria 300*10, ou seja, 3000 pixels
 
     const colocarImagensNaPosicao = posicao => {
       for (let i = 0; i < imagens.length; i++) {
-        let proximaPosicao = imagemSize * i + posicao
+        let proximaPosicao = imagemSize * i + posicao //essa é uma das partes mais complicadas de entender.
+        //a imagem 0, a posição inicial dela é 0, certo? Se for a imagem 1, a posição inicial é o tamanho da 300
+        //a imagem 2 começa na posição 600, e por ai vai, ou seja, é o tamanho da imagem x o numero da imagem.
+        //sendo que esse for vai sendo chamado de tempos em tempos. ou seja, no proximo loop, a posição da imagem 0 será 1
+        //e a posição da imagem 1 será 301.
         if (proximaPosicao >= tamanhoMaximo - imagemSize) {
           proximaPosicao = proximaPosicao - tamanhoMaximo
+          //O que eu faço aqui? O tamanho total não é 3000 pixels? Se a imagem for além dos 3000 pixels, eu quero que ela volte para o início,
+          //mas o início não será 0, e sim -300, assim a imagem já estará a esquerda da imagem principal.
         }
         imagens[i].style.left = `${proximaPosicao}px`
       }
@@ -50,7 +56,8 @@
 
     let posicao = 0
     setInterval(() => {
-      if (posicao > tamanhoMaximo) posicao = 0
+      if (posicao > tamanhoMaximo) posicao = 0 //só pra zerar, se a posição já passou o valor máximo, ou seja, 3000 pixels
+      //vou resetar o tamanho da posição pra 0, que é quando acontece o início do nosso programa, amém.
       colocarImagensNaPosicao(posicao++)
     }, 10)
   </script>
