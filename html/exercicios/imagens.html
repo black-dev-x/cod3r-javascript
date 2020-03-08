@@ -1,0 +1,88 @@
+<div class="logo">
+  <picture>
+    <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 600px)" />
+    <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo" />
+  </picture>
+</div>
+
+<div class="galeria">
+  <div>
+    <img
+      class="membroDaGaleria"
+      src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+      alt="Foto de uma praia, onde na areia se encontram diversas pedras, e em uma dessas pedras foi pintado um rosto"
+      title="Muro da Cidade por Tarso Bessa"
+    />
+  </div>
+
+  <div>
+    <img
+      class="membroDaGaleria"
+      src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+      alt="Logotipo da COD3R.com.br"
+      title="Logotipo da COD3R"
+    />
+  </div>
+
+  <div>
+    <img
+      class="membroDaGaleria"
+      src="http://files.cod3r.com.br/curso-web/imagem3.png"
+      alt="Foto do Rio de Janeiro tirada do mar com destaque ao morro do rio."
+      title="Rio de Janeiro"
+    />
+  </div>
+
+  <div class="cidade membroDaGaleria"></div>
+</div>
+
+<div class="perfil">
+  <img class="avatar" src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" title="Avatar" />
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio inventore beatae perspiciatis reiciendis? Voluptates
+  sit maiores numquam minus mollitia facilis cupiditate a, doloremque iure quam deleniti quaerat inventore expedita.
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae at cum rerum sit dicta voluptas sint, cumque
+  quibusdam dolore. Repudiandae eligendi veritatis cum eos ratione cumque autem et voluptatibus enim. Lorem ipsum dolor
+  sit amet consectetur adipisicing elit. Quibusdam hic illum quod aliquam. Odio, in voluptatibus quos numquam facere
+  dolore porro optio, magnam minima sed, vero error explicabo qui natus. Lorem ipsum dolor sit amet consectetur
+  adipisicing elit. Fuga quisquam aliquam corrupti? Quam ut illo beatae commodi voluptates explicabo impedit, voluptate
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia hic fugiat maxime fugit beatae odio qui aspernatur,
+  incidunt neque magni? Inventore vitae maiores adipisci enim odio doloremque magnam perspiciatis ipsa. itaque
+  quibusdam, deleniti, ipsam dolorem ipsum libero voluptatum nihil.
+</div>
+
+<style>
+  /* css da logo */
+  .logo {
+    margin-top: 30px;
+  }
+  /* css da galeria */
+  .galeria {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .membroDaGaleria {
+    width: 513px;
+    height: 342px;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  .cidade {
+    background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+    background-position: center;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    /* se você não colocasse center, a imagem mostraria apenas as nuvens, que estão no canto esquerdo superior...
+    afinal a imagem não cabe nesse pequeno espaço que demos para ela xD! O background-size ajuda você a ver mais detalhes da imagem
+    Teste com o size de 100%, depois de 200% para ver a diferença. */
+  }
+
+  /* css da imagem do avatar */
+  .perfil {
+    width: 400px;
+  }
+  .avatar {
+    float: left;
+    height: 50px;
+    margin-right: 15px;
+  }
+</style>

@@ -8,6 +8,7 @@
 .conteudo {
   min-height: 80vh;
   margin-bottom: 10vh;
+  overflow-x: hidden;
 }
 .rodape {
   position: fixed;
