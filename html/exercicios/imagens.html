@@ -34,20 +34,20 @@
   </div>
 
   <div class="cidade membroDaGaleria"></div>
-</div>
 
-<div class="perfil">
-  <img class="avatar" src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" title="Avatar" />
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio inventore beatae perspiciatis reiciendis? Voluptates
-  sit maiores numquam minus mollitia facilis cupiditate a, doloremque iure quam deleniti quaerat inventore expedita.
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae at cum rerum sit dicta voluptas sint, cumque
-  quibusdam dolore. Repudiandae eligendi veritatis cum eos ratione cumque autem et voluptatibus enim. Lorem ipsum dolor
-  sit amet consectetur adipisicing elit. Quibusdam hic illum quod aliquam. Odio, in voluptatibus quos numquam facere
-  dolore porro optio, magnam minima sed, vero error explicabo qui natus. Lorem ipsum dolor sit amet consectetur
-  adipisicing elit. Fuga quisquam aliquam corrupti? Quam ut illo beatae commodi voluptates explicabo impedit, voluptate
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia hic fugiat maxime fugit beatae odio qui aspernatur,
-  incidunt neque magni? Inventore vitae maiores adipisci enim odio doloremque magnam perspiciatis ipsa. itaque
-  quibusdam, deleniti, ipsam dolorem ipsum libero voluptatum nihil.
+  <div class="perfil">
+    <img class="avatar" src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" title="Avatar" />
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio inventore beatae perspiciatis reiciendis?
+    Voluptates sit maiores numquam minus mollitia facilis cupiditate a, doloremque iure quam deleniti quaerat inventore
+    expedita. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae at cum rerum sit dicta voluptas sint,
+    cumque quibusdam dolore. Repudiandae eligendi veritatis cum eos ratione cumque autem et voluptatibus enim. Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Quibusdam hic illum quod aliquam. Odio, in voluptatibus quos
+    numquam facere dolore porro optio, magnam minima sed, vero error explicabo qui natus. Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Fuga quisquam aliquam corrupti? Quam ut illo beatae commodi voluptates explicabo
+    impedit, voluptate Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia hic fugiat maxime fugit beatae
+    odio qui aspernatur, incidunt neque magni? Inventore vitae maiores adipisci enim odio doloremque magnam perspiciatis
+    ipsa. itaque quibusdam, deleniti, ipsam dolorem ipsum libero voluptatum nihil.
+  </div>
 </div>
 
 <style>
@@ -56,9 +56,9 @@
     margin-top: 30px;
   }
   /* css da galeria */
-  .galeria {
-    display: flex;
-    flex-wrap: wrap;
+  .galeria > div {
+    position: absolute;
+    display: none;
   }
   .membroDaGaleria {
     width: 513px;
@@ -86,3 +86,33 @@
     margin-right: 15px;
   }
 </style>
+<script>
+  function mover(elemento, inicio, fim, passo, callback) {
+    const novoInicio = inicio - passo
+    if (novoInicio >= fim) {
+      elemento.style.left = novoInicio + 'px'
+      setTimeout(() => mover(elemento, novoInicio, fim, passo, callback), 7)
+    } else {
+      callback()
+    }
+  }
+  function slider() {
+    const elementos = document.querySelectorAll('.galeria > div')
+    const slides = Array.from(elementos)
+    exibirSlide(slides, slides[0])
+  }
+  function exibirSlide(slides, slide) {
+    slide.style.display = 'block'
+    const inicio = innerWidth
+    const fim = -slide.clientWidth
+    mover(slide, inicio, fim, 5, () => {
+      exibirSlide(slides, getProximo(slides, slide))
+    })
+  }
+  function getProximo(lista, atual) {
+    const i = lista.indexOf(atual) + 1
+    return i < lista.length ? lista[i] : lista[0]
+  }
+
+  slider()
+</script>
