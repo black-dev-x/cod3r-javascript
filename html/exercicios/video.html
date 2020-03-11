@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <video id="meuVideo" controls controlsList="nodownload">
+      <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4" />
+      Seu browser não suporta os vídeos desta jaca
+    </video>
+    <div barraDeProgresso="meuVideo" class="barraDeProgresso">
+      <div class="progressoTotalDoVideo"></div>
+    </div>
+    <div>
+      <button id="play" class="botaoEsquizo">Play</button>
+      <button id="pause" class="botaoEsquizo">Pause</button>
+    </div>
+
+    <style>
+      #meuVideo {
+        width: 450px;
+      }
+      .barraDeProgresso {
+        width: 450px;
+        height: 20px;
+        border: 2px solid black;
+        background-color: white;
+      }
+      .progressoTotalDoVideo {
+        width: 0%;
+        height: 100%;
+        /* lembre-se que é 100% da altura do pai, como o pai tem 20px, no caso seria 20px de altura, height = altura */
+        background-color: red;
+      }
+      .botaoEsquizo {
+        border-radius: 100%;
+        margin: 10px;
+        padding: 10px;
+        color: white;
+        background-color: black;
+        font-size: 1.2em;
+      }
+      .botaoEsquizo:hover {
+        /* para o botão ficar lindo, quando o mouse ficar em cima */
+        color: greenyellow;
+        background-color: tomato;
+        padding: 100px;
+        border-radius: 0%;
+        font-size: 2.3em;
+      }
+    </style>
+    <script>
+      const botaoDoPlay = document.getElementById('play')
+      const botaoDoPause = document.getElementById('pause')
+      const meuVideo = document.getElementById('meuVideo')
+
+      botaoDoPlay.onclick = () => meuVideo.play()
+      botaoDoPause.onclick = () => meuVideo.pause()
+
+      const atualizaBarraDeProgresso = () => {
+        const tempoAtual = meuVideo.currentTime
+        const tempoTotal = meuVideo.duration
+        const porcentagem = 100 * (tempoAtual / tempoTotal) + '%'
+        const progressoTotalDoVideo = document.querySelector('.progressoTotalDoVideo')
+        progressoTotalDoVideo.style.width = porcentagem
+      }
+      setInterval(atualizaBarraDeProgresso, 5)
+    </script>
+  </body>
+</html>
