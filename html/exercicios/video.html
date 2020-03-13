@@ -56,6 +56,8 @@
       const botaoDoPause = document.getElementById('pause')
       const meuVideo = document.getElementById('meuVideo')
 
+      meuVideo.oncontextmenu = () => false
+
       botaoDoPlay.onclick = () => meuVideo.play()
       botaoDoPause.onclick = () => meuVideo.pause()
 
