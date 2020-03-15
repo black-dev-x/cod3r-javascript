@@ -1,44 +1,89 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>CSS Selectors</title>
-    <link rel="stylesheet" href="css/tag.css">
+    <link rel="stylesheet" href="css/tag.css" />
     <style>
-        /* ... */
-    </style>
-</head>
+      /* * é o seletor universal, seleciona todos os elementos */
 
-<body>
-    <div class='tag'>
-        <div class='tag'>
-            <p class='tag'>1</p>
-            <ul class='tag' feira='casa'>
-                <li>Arroz</li>
-                <li>Feijão</li>
-            </ul>
-            <ul class='tag' feira='escritorio empresa'>
-                <li>Café</li>
-                <li>Água</li>
-            </ul>
-            <ol id='aprovados' class='tag'>
-                <li>Maria</li>
-                <li>Pedro</li>
-                <li>Ana</li>
-            </ol>
-            <div id='aninhado' class='tag'>
-                <div class="tag">
-                    <section class='tag'>
-                        <span class='tag'>1</span>
-                        <p class='tag'>2</p>
-                        <span class='tag'>3</span>
-                    </section>
-                </div>
-            </div>
+      /* .tag seleciona todas as classes de nome tag, o . diz que isso é uma classe */
+
+      /* #aprovados seleciona o elemento de id aprovados, é boa prática o id pertencer a apenas um elemento */
+
+      /* #aninhado > div esse seletor seleciona o filho DIRETO que seja uma div do elemento de id aninhado */
+
+      /* #aninhado section esse seletor seleciona QUALQUER filho que seja section do elemento de id aninhado */
+
+      /* p + ul esse seletor seleciona qualquer ul que antes tenha uma tag do tipo p, ou seja irmão direto de p */
+
+      /* p ~ ol esse seletor seleciona qualquer ol que seja irmão de p */
+
+      /* [feira] esse seletor procura todos os elementos que tenham uma propriedade chamada feira */
+
+      /* [feira=casa] esse seletor procura o lugar onde o atributo feira seja igual a casa, ou seja feira="casa"
+      o problema é que se feira="casa escritorio" não funcionaria ok? teria que ser idêntico para funcionar*/
+
+      /* [feira~=escritorio] quando se utiliza o ~ antes do igual, ele procura se um dos multiplos valores é igual
+      a escritorio, ou seja, se fosse feira="escritorio das jacas" iria funcionar,ou feira="escritorio" também */
+
+      /* [feira*=sa] ele procura se dentro dos valores, existem as palavras sa juntas, é uma busca textual, então casa e empresa
+      funcionariam nesse caso, pois casa tem sa, e empresa tem sa, mas lembrando que se fosse [feira*=asa] como diria o sabio professor
+      empresa não funcionaria, pois apenas casa tem asa. Galinha também teria mas não entra nesse caso...*/
+
+      /* span:nth-child(1) procura o primeiro filho, que é do tipo span */
+
+      /* section >:nth-child(odd) odd em inglês significa impar, logo ele seleciona todos os filhos impares de uma section
+      section >:nth-child(even) even em inglês significa par, logo ele seleciona todos os filhos pares de uma section
+      sabe para que é util geralmente pegar filhos pares ou impares? Quando se quer fazer uma tabela onde cada linha
+      se alterna uma cor, linhas pares são cinzas e impares brancas, consegue imaginar? */
+
+      /* section > :nth-child(odd), ul, p utilizar a virgula faz um "ou" para você, ou seja quero filhos diretos de section
+      que sejam impares :nth-child(odd) OU ul OU p */
+
+      /* section > :nth-child(odd) label agora como não existe virgula, você seleciona os filhos diretos de section que são
+      impares,  e depois seleciona os filhos desses elementos impares que são label */
+
+      /* section > span:nth-of-type(2) esse aqui eu nem me lembrava, quando se digita nth-of-type, ele pega do tipo span,
+      o segundo elemento, mas quando você não se lembra de algo, você sempre pode consultar. MAS se você escreveu um seletor
+      bizarramente confuso, tenho 100% de certeza que você poderia troca-lo por algo mais simples =), basta adicionar alguma classe
+      no elemento html para pegar o que você quer. */
+
+      span:nth-child(1) {
+        color: #ff0;
+        background-color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tag">
+      <div class="tag">
+        <p class="tag">1</p>
+        <ul class="tag" feira="casa">
+          <li>Arroz</li>
+          <li>Feijão</li>
+        </ul>
+        <ul class="tag" feira="escritorio empresa">
+          <li>Café</li>
+          <li>Água</li>
+        </ul>
+        <ol id="aprovados" class="tag">
+          <li>Maria</li>
+          <li>Pedro</li>
+          <li>Ana</li>
+        </ol>
+        <div id="aninhado" class="tag">
+          <div class="tag">
+            <section class="tag nolabel">
+              <span class="tag">1</span>
+              <p class="tag">2</p>
+              <span class="tag">3</span>
+            </section>
+          </div>
         </div>
+      </div>
     </div>
     <script src="js/tag.js"></script>
-</body>
-
+  </body>
 </html>
