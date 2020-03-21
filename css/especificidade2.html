@@ -4,10 +4,27 @@
     <meta charset="UTF-8" />
     <title>Especificidade CSS</title>
     <style>
-      /* https://specificity.keegan.st/ */
+      body {
+        font-size: 40px;
+      }
+      div {
+        background-color: #008;
+        color: #fff;
+      }
+      div[wm-cor] {
+        background-color: darkorange;
+      }
+      /* o div[wm-cor] e o div:hover tem a mesma especificidade, problemas com hover geralmente acontecem
+      por causa disso, mas é facilmente resolvido se você faz algo do genero
+      div[wm-cor] e div[wm-cor]:hover */
+      div:hover {
+        background-color: purple;
+      }
+      div.estilo {
+        background-color: green;
+      }
     </style>
   </head>
-
   <body>
     <div id="unico1" class="estilo">
       #unico1 vs .estilo vs inline
