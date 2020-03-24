@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Tamanho Box</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-            }
-            .flex {
-                display: flex;
-            }
-        .blue {
-            background-color: deepskyblue;
-            width: 50%;
-            height: 300px;
-            border-right: 20px solid black;
-            padding: 100px;
-        }
-        .orange {
-            background-color: salmon;
-            width: 50%;
-            height: 300px;
-            border-right: 20px solid black;
-            /* o proprio nome diz, border box, ou seja essa caixa conta até a borda, o tamanho dela, o comportamento mais normal né */
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tamanho Box</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .blue {
+        background-color: deepskyblue;
+        width: 50%;
+        height: 300px;
+        border-right: 20px solid black;
+        padding: 100px;
+      }
+      .orange {
+        background-color: salmon;
+        width: 50%;
+        height: 300px;
+        border-right: 20px solid black;
+        box-sizing: border-box;
+        /* o proprio nome diz, border box, ou seja essa caixa conta até a borda, o tamanho dela, o comportamento mais normal né */
+      }
     </style>
-    </head>
-    <body>
-        <div class="flex">
-            <div class="blue">
-                Essa div aqui ocupa 50% mais a borda e mais o padding
-            </div>
-            <div class="orange">
-                Essa div realmente ocupa 50%
-            </div>
-        </div>
-    </body>
+  </head>
+  <body>
+    <div class="blue">
+      Essa div aqui ocupa 50% mais a borda e mais o padding
+    </div>
+    <div class="orange">
+      Essa div realmente ocupa 50%
+    </div>
+  </body>
 </html>
