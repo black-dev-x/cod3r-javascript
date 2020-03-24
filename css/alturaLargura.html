@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Altura e Largura</title>
     <style>
-        body {
-            font-size: 40px;
-            background-color: coral;
-        }
-
-        div {
-            background-color: seagreen;
-        }
-
-        span {
-            background-color: dodgerblue;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #aplicacao {
+        display: flex;
+        height: 100vh;
+      }
+      #aplicacao div {
+        background-color: orange;
+        height: 25%;
+        width: 25%;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <div>Título</div>
-    <span>Subtítulo</span>
-</body>
-
+  <body>
+    <div id="aplicacao">
+      <div>Título</div>
+      <span>Subtítulo</span>
+    </div>
+  </body>
 </html>
