@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+    }
+    .bloco1 {
+      background-color: steelblue;
+      height: 20vh;
+    }
+    .bloco2 {
+      background-color: olivedrab;
+      height: 40vh;
+    }
+    .bloco3 {
+      background-color: tomato;
+      height: 20vh;
+    }
+    .bloco4 {
+      background-color: blueviolet;
+      height: 20vh;
+    }
+    @media (min-width: 1000px) {
+      .bloco3 {
+        float: left;
+        width: 50%;
+        height: 40vh;
+      }
+      .bloco4 {
+        float: right;
+        width: 50%;
+        height: 40vh;
+      }
+    }
+  </style>
+  <body>
+    <div class="bloco1"></div>
+    <div class="bloco2"></div>
+    <div class="bloco3"></div>
+    <div class="bloco4"></div>
+  </body>
+</html>
