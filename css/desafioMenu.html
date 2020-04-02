@@ -14,13 +14,14 @@
     <style>
       body {
         background-color: rgb(212, 210, 212);
+        font-family: 'Oswald';
       }
       * {
         margin: 0;
         padding: 0;
       }
       .cabecalho {
-        border-bottom: 1px solid rgb(114, 164, 199);
+        border-bottom: 5px solid rgb(114, 164, 199);
         background-color: black;
       }
       .logo {
@@ -58,6 +59,10 @@
         text-decoration: none;
       }
       .menu a:hover {
+        background-color: rgb(105, 170, 218);
+        color: black;
+      }
+      .menu .atual {
         background-color: rgb(105, 170, 218);
         color: black;
       }
@@ -109,7 +114,20 @@
     </header>
 
     <script>
-      // ...
+      const linksDaPagina = document
+        .querySelectorAll('a')
+        .forEach(link => (link.onclick = () => verificaClasses()))
+      const verificaClasses = () => {
+        const linkAtual = window.location.hash
+        const linksDoCabecalho = document.querySelectorAll('.cabecalho a')
+        linksDoCabecalho.forEach(link => {
+          if (linkAtual === link.getAttribute('href')) {
+            link.classList.add('atual')
+          } else {
+            link.classList.remove('atual')
+          }
+        })
+      }
     </script>
   </body>
 </html>
