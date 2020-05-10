@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='UTF-8'>
+  <head>
+    <meta charset="UTF-8" />
     <title>Trabalhando com Eventos #01</title>
-    <link rel='stylesheet' href='css/estilo.css'>
-</head>
-
-<body class="conteudo exercicio">
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+      <a delayDe5Segundos href="https://google.com.br">Google</a>
     </div>
+    <p textoInformativo></p>
     <script>
-        // ...
+      const textoInformativo = document.querySelector('p[textoInformativo]')
+      const linkDeNavegacao = document.querySelector('a[delayDe5Segundos]')
+
+      const navegarEm5Segundos = evento => {
+        evento.preventDefault()
+        let tempoEmSegundos = 5
+
+        setInterval(() => {
+          textoInformativo.innerHTML = `Navegando para o site em ${tempoEmSegundos} segundos`
+          tempoEmSegundos--
+        }, 1000)
+
+        setTimeout(() => {
+          const enderecoDoLink = evento.target.href
+          window.location.href = enderecoDoLink
+        }, 5000)
+      }
+
+      linkDeNavegacao.onclick = navegarEm5Segundos
     </script>
-</body>
+  </body>
+</html>

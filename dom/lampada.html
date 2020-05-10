@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img esquizolampada />
+    <script>
+      const lampadaAcesa = 'https://www.w3schools.com/js/pic_bulbon.gif'
+      const lampadaApagada = 'https://www.w3schools.com/js/pic_bulboff.gif'
+      const imagemLampada = document.querySelector('img[esquizolampada]')
+
+      setInterval(() => {
+        if (imagemLampada.src == lampadaAcesa) {
+          imagemLampada.src = lampadaApagada
+        } else {
+          imagemLampada.src = lampadaAcesa
+        }
+      }, 2000)
+    </script>
+  </body>
+</html>
