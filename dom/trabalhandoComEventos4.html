@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='UTF-8'>
+  <head>
+    <meta charset="UTF-8" />
     <title>Trabalhando com Eventos #04</title>
-    <link rel='stylesheet' href='css/estilo.css'>
+    <link rel="stylesheet" href="css/estilo.css" />
     <style>
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        form input,
-        form select,
-        form button {
-            margin: 10px;
-            font-size: 1.6em;
-        }
-    </style>
-</head>
+      form {
+        display: flex;
+        flex-direction: column;
+      }
 
-<body class="conteudo exercicio">
+      form input,
+      form select,
+      form button {
+        margin: 10px;
+        font-size: 1.6em;
+      }
+    </style>
+  </head>
+
+  <body class="conteudo exercicio">
     <h1>Formulário</h1>
     <form name="pesquisa" action="http://www.google.com.br/search">
-        <input type="text" name="q" placeholder="Digite o termo...">
-        <select name="hl">
-                <option value="pt-br">Português (Brasil)</option>
-                <option value="en-us">Inglês (Americano)</option>
-            </select>
-        <button wm-submit>Pesquisar</button>
+      <input type="text" name="q" placeholder="Digite o termo..." />
+      <select name="hl">
+        <option value="pt-br">Português (Brasil)</option>
+        <option value="en-us">Inglês (Americano)</option>
+      </select>
+      <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+      const botao = document.querySelector('button')
+      const formularioDePesquisa = document.querySelector('[name=pesquisa]')
+      botao.onclick = e => {
+        e.preventDefault()
+        const dadosDoFormulario = new FormData(formularioDePesquisa)
+        dadosDoFormulario.append('ajax', true)
+
+        const texto = `O valor do campo q é "${dadosDoFormulario.get('q')}"
+        além disso ele possui um campo chamado hl? ${dadosDoFormulario.has('hl') ? 'verdadeiro' : 'falso'}
+        Lembre-se de olhar o console.log para ver o valor de "dado"`
+        alert(texto)
+
+        for (let dado of dadosDoFormulario) {
+          console.log(dado)
+        }
+      }
     </script>
-</body>
+  </body>
+</html>
